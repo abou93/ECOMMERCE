@@ -39,10 +39,15 @@ public class ClientDAOImpl implements ClientDAO {
 	}
 
 	@Override
-	public void ajouterClient(Client client) {
-		String SQL = "insert into client values (?, ?, ?, ?, ?)";
-		jdbcTemplateObject.update(SQL,new Object[]{client.getId(), client.getNom(), client.getPrenom(), client.getMdp()} );
-
+	public boolean ajouterClient(Client client) {
+		String SQL = "insert into client values (?, ?, ?, ?)";
+		int execReq = jdbcTemplateObject.update(SQL,new Object[]{client.getId(), client.getNom(), client.getPrenom(), client.getMdp()} );
+		System.out.println("resultat de la requete "+ execReq);
+		if (execReq > 0){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 }

@@ -20,6 +20,7 @@
 				if (session.getAttribute("client")== null) {
 				%>
 				<li><a href="./connexion.jsp">Connexion</a></li>
+				<li><a href="./inscription.jsp">Inscription</a></li>
 				<%}else{
 				%>
 				<li><a href="./deconnexion">Deconnexion</a></li>

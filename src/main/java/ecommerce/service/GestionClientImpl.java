@@ -52,16 +52,15 @@ public class GestionClientImpl implements GestionClient{
 	
 	@Override
 	public String ajouterClient() {
-		clientDao.ajouterClient(client);
-		// check insert here
-		// if insert success
-		facesContext = FacesContext.getCurrentInstance();
-		session = (HttpSession) facesContext.getExternalContext().getSession(true);
-		session.setAttribute("client", client);
-		//return "index.jsp?faces-redirect=true"; //sucess
-		//else
-		//return "inscription.jsp?faces-redirect=true"; //null
-		return null;
+		boolean addClient = clientDao.ajouterClient(client);
+		if(addClient){
+			facesContext = FacesContext.getCurrentInstance();
+			session = (HttpSession) facesContext.getExternalContext().getSession(true);
+			session.setAttribute("client", client);
+			return "index.jsp?faces-redirect=true";
+		}else{
+			return "inscription.jsp?faces-redirect=true";
+		}
 	}
 	
 	@Override

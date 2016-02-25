@@ -57,7 +57,7 @@
 		<label for="nom">Nom</label>
 		<h:inputText value="#{ClientService.client.nom}" required="true" id="nom" />
 		<label for="mdp">Mot de passe</label>
-		<h:inputText value="#{ClientService.client.mdp}" required="true" id="mdp" />
+		<h:inputSecret value="#{ClientService.client.mdp}" required="true" id="mdp" />
 		<p>
 			<h:commandButton value="Connexion" action="#{ClientService.verifierClient}" />
 		</p>
