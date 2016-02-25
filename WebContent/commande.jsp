@@ -42,7 +42,7 @@
 <body>
 
 <!-- Navigation -->
-<%if(null != session.getAttribute("client")){response.sendRedirect("./index.jsp");}%>
+<%if(null == session.getAttribute("client")){response.sendRedirect("./index.jsp");}%>
 <jsp:include page="./nav.jsp" />
 
 <!-- Page Content -->
@@ -56,10 +56,10 @@
 	</div>
 
 	<!-- /.row -->
-	<h:outputText value="#{CommandeService.panier}" />
+	<h:outputText value="#{CommandeService.getPanier('panier_001.txt')}" />
 	<h:form>
 		<p class="btn">
-			<h:commandButton value="Merci de votre visite" action="#{CommandeService. }" />
+			<h:commandButton value="Merci de votre visite" action="#{CommandeService.addCommande}" />
 		</p>
 	</h:form>
 	<!-- /.row -->

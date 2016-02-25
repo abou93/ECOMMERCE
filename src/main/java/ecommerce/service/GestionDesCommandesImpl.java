@@ -18,9 +18,9 @@ public class GestionDesCommandesImpl implements GestionDesCommandes {
 	public Commande getCommande(){
 		return commande;
 	}
-	
-	public String getJson() throws Exception{
-		InputStream in = new FileInputStream(new File("C:/workspace_parking/e-commerce/WebContent/panier/panier_001.txt"));
+
+	public String getPanier(String file) throws Exception{
+		InputStream in = new FileInputStream(new File("C:/workspace_parking/e-commerce/WebContent/panier/"+file));
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 		StringBuilder out = new StringBuilder();
 		String line;
@@ -28,30 +28,34 @@ public class GestionDesCommandesImpl implements GestionDesCommandes {
 			out.append(line);
 		}
 		reader.close();	
+		setPanier(out.toString());
 		return out.toString();
 	}
-	
-//	public List<Produit> jsonToListProduct(StringBuilder out) {
-//		JSONArray jsonArray = new JSONArray(out.toString());
-//		List<Produit> produits = new ArrayList<Produit>();  
-//		if (jsonArray != null) { 
-//			int len = jsonArray.length();
-//			for (int i=0;i<len;i++){ 
-//				Produit produit = new Produit();
-//				JSONObject jsonObject = jsonArray.getJSONObject(i);
-//				produit.setId(jsonObject.getInt("id"));
-//				produit.setName(jsonObject.getString("name"));
-//				produit.setPrix(jsonObject.getDouble("prix"));
-//				produits.add(produit);
-//			} 
-//		}
-//		return produits;
-//	}
-	
+
+	private void setPanier(String dataPanier) {
+	}
+
+	//	public List<Produit> jsonToListProduct(StringBuilder out) {
+	//		JSONArray jsonArray = new JSONArray(out.toString());
+	//		List<Produit> produits = new ArrayList<Produit>();  
+	//		if (jsonArray != null) { 
+	//			int len = jsonArray.length();
+	//			for (int i=0;i<len;i++){ 
+	//				Produit produit = new Produit();
+	//				JSONObject jsonObject = jsonArray.getJSONObject(i);
+	//				produit.setId(jsonObject.getInt("id"));
+	//				produit.setName(jsonObject.getString("name"));
+	//				produit.setPrix(jsonObject.getDouble("prix"));
+	//				produits.add(produit);
+	//			} 
+	//		}
+	//		return produits;
+	//	}
+
 	@Override
 	public void addCommande() {
-//		commande.setDateCmd(dataaujourdhui);
-//		commande.setIdClient(idClient);
+		//		commande.setDateCmd(dataaujourdhui);
+		//		commande.setIdClient(idClient);
 		commande.setPanier(panier);
 		commandeDAO.addCommande(commande);
 	}
