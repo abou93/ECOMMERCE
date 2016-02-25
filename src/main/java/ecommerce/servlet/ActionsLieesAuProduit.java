@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+
 import ecommerce.dto.Produit;
 import ecommerce.service.GestionDesProduits;
 import ecommerce.service.GestionDesProduitsImpl;
@@ -23,12 +25,11 @@ public class ActionsLieesAuProduit extends HttpServlet {
 
 		GestionDesProduits gestionDesProduits = new GestionDesProduitsImpl();
 		List<Produit> produits = gestionDesProduits.recupererToutsLesProduits();
-
+		String resultat = new Gson().toJson(produits);
 		response.setContentType("text/html");
 
 		PrintWriter out = response.getWriter();
-		out.println(produits); 
-		out.println("Je suis dans la servlet"); // mon retour ici
+		out.println(resultat); 
 	}
 
 	/*

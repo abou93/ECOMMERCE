@@ -80,8 +80,8 @@
 	<!-- /.row -->
 
 	<!-- Page Features -->
-	<div class="row text-center">
-		<% for(int i=0; i<12 ; i++){ %>
+	<div class="row text-center listProduct">
+		<%-- <% for(int i=0; i<12 ; i++){ %>
 			<div class="col-md-3 col-sm-6 hero-feature">
 				<div class="thumbnail">
 					<img src="http://placehold.it/800x500" alt="">
@@ -94,7 +94,8 @@
 					</div>
 				</div>
 			</div>
-		<%} %>
+		<%} %> --%>
+	</div>
 
 		<!-- /.row -->
 
