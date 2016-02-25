@@ -19,7 +19,6 @@ public class CommandeDAOImpl implements CommandeDAO {
 	
 	@Override
 	public void addCommande(Commande cmd) {
-		
 //		String SQL = "insert into commande values (?, ?, ?, ?, ?)";
 //		jdbcTemplateObject.update(SQL,new Object[]{cmd.getDateCmd(), cmd.getIdClient(), cmd.getDateCmd(), cmd.getNumero(), cmd.getPanier().getId()} );
 

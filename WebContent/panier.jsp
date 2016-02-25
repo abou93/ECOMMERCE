@@ -4,18 +4,8 @@
 
 <!-- <titlE-Commerce Panier</title> -->
 
-<<<<<<< HEAD
 <f:view>
 <jsp:include page="./header.jsp" />
-=======
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/actionsLieesAuProduit.js"></script>
-    <script src="js/FileSaver.js"></script>
-    <script src="js/cookie.js"></script>
-    <script type="text/javascript" src="js/panier.js"></script>
-</head>
->>>>>>> origin/master
 
 <%if(null == session.getAttribute("client")){response.sendRedirect("./index.jsp");}%>
 
