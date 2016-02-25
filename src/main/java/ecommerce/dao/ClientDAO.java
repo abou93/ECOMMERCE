@@ -6,5 +6,5 @@ public interface ClientDAO {
 
 	Client recupererClientById (Long id);
 	Client verifierClient(String nom, String mdp);
-	boolean ajouterClient(Client client);
+	void ajouterClient(Client client);
 }
