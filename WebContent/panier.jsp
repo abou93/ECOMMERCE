@@ -40,6 +40,7 @@
 </head>
 
 <body>
+<%if(null != session.getAttribute("client")){response.sendRedirect("./index.jsp");}%>
 <jsp:include page="./nav.jsp" />
 
 <!-- Page Content -->
